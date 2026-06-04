@@ -9,6 +9,7 @@ The centralized Homebrew tap for `coilyco-flight-deck/*` tools. Each `Formula/*.
 Active formulae:
 
 - `Formula/ward.rb` - tracks `coilyco-flight-deck/ward` releases.
+- `Formula/repo-recall.rb` - tracks `coilyco-flight-deck/repo-recall` releases.
 
 ## Release flow
 

@@ -16,6 +16,7 @@ brew install coilyco-flight-deck/tap/ward
 ## Formulae
 
 * `Formula/ward.rb` - `coilyco-flight-deck/ward` - the `ward` cli-guard consumer.
+* `Formula/repo-recall.rb` - `coilyco-flight-deck/repo-recall` - local dev dashboard indexing Claude Code session history against your repos.
 
 ## Release flow
 
