@@ -17,6 +17,8 @@ brew install coilyco-flight-deck/tap/ward
 
 * `Formula/ward.rb` - `coilyco-flight-deck/ward` - the `ward` cli-guard consumer.
 * `Formula/repo-recall.rb` - `coilyco-flight-deck/repo-recall` - local dev dashboard indexing Claude Code session history against your repos.
+* `Formula/session-lattice.rb` - `coilyco-flight-deck/session-lattice` - materialized-view service over Claude session data (embedded DuckDB).
+* `Formula/session-lattice-puller.rb` - `coilyco-flight-deck/session-lattice` - companion puller service for session-lattice (ships only a brew service).
 
 ## Release flow
 

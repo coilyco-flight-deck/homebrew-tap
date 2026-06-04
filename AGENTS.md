@@ -10,6 +10,8 @@ Active formulae:
 
 - `Formula/ward.rb` - tracks `coilyco-flight-deck/ward` releases.
 - `Formula/repo-recall.rb` - tracks `coilyco-flight-deck/repo-recall` releases.
+- `Formula/session-lattice.rb` - tracks `coilyco-flight-deck/session-lattice` releases.
+- `Formula/session-lattice-puller.rb` - companion service formula; pinned in lockstep with `session-lattice.rb`.
 
 ## Release flow
 

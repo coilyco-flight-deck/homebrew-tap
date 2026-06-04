@@ -10,6 +10,8 @@ Tap installed via `brew tap coilyco-flight-deck/tap https://forgejo.coilysiren.m
 
 - **[Formula/ward.rb](../Formula/ward.rb)** - tracks `coilyco-flight-deck/ward` tag + revision. A contributor-facing cli-guard consumer. Builds from source with the GOPROXY bypass (see below).
 - **[Formula/repo-recall.rb](../Formula/repo-recall.rb)** - tracks `coilyco-flight-deck/repo-recall` tag + revision. Local dev dashboard indexing Claude Code session history against your repos. Builds from source via `cargo` (Rust); installs a `brew services` daemon.
+- **[Formula/session-lattice.rb](../Formula/session-lattice.rb)** - tracks `coilyco-flight-deck/session-lattice` tag + revision. Materialized-view service over Claude session data (embedded DuckDB). Python virtualenv formula; installs a reads `brew services` daemon.
+- **[Formula/session-lattice-puller.rb](../Formula/session-lattice-puller.rb)** - companion to session-lattice, pinned in lockstep. Ships only the puller `brew services` daemon; depends on `coilyco-flight-deck/tap/session-lattice` for the binary.
 
 ## Release bump automation
 
@@ -17,6 +19,7 @@ This repo holds no workflows. Each upstream tool's release pipeline writes the v
 
 - **`coilyco-flight-deck/ward`** `.github/workflows/release.yml` - on each release, rewrites the `url` line of [Formula/ward.rb](../Formula/ward.rb) in this repo.
 - **`coilyco-flight-deck/repo-recall`** `.forgejo/workflows/release.yml` - on each release, the `bump-tap-formula` job rewrites the `url` line of [Formula/repo-recall.rb](../Formula/repo-recall.rb) in this repo.
+- **`coilyco-flight-deck/session-lattice`** `.github/workflows/release.yml` - on each release, the `bump-tap-formula` job rewrites the `url` line of both [Formula/session-lattice.rb](../Formula/session-lattice.rb) and [Formula/session-lattice-puller.rb](../Formula/session-lattice-puller.rb) in this repo (both pin the same tag + revision).
 
 ## Build notes
 
