@@ -1,0 +1,22 @@
+# Per-repo command allowlist for homebrew-tap. The repo is just Formula/
+# files written by upstream release pipelines. No local dev verbs beyond
+# `brew audit`, present so coily's repocfg loader recognizes the repo and
+# the lockdown discipline is uniform.
+
+commands:
+  audit:
+    run: brew audit --strict --tap coilyco-flight-deck/tap
+    description: Run brew audit --strict against every formula in this tap.
+
+# Catalog metadata for the cross-repo knowledge graph.
+catalog:
+  kind: Component
+  type: configuration
+  system: coily-platform
+  owner: kai
+  lifecycle: production
+  description: "Centralized Homebrew tap for coilyco-flight-deck tools."
+  dependsOn:
+    - coilyco-flight-deck/ward
+  providesApis:
+    - homebrew-formulas
