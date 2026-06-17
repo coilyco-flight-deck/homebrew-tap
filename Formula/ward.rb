@@ -1,13 +1,17 @@
 class Ward < Formula
   desc "A contributor-facing cli-guard consumer"
   homepage "https://forgejo.coilysiren.me/coilyco-flight-deck/ward"
-  url "https://forgejo.coilysiren.me/coilyco-flight-deck/ward.git", tag: "v0.32.0", revision: "d248889865f57e602e5d33d883040d5b1b2c9a5f"
+  url "https://forgejo.coilysiren.me/coilyco-flight-deck/ward/archive/v0.32.0.tar.gz"
+  sha256 "169ca651980c42325e68b4ac3295d54d3021f468dcb691a8fde210f0af81ae72"
   license "MIT"
   head "https://forgejo.coilysiren.me/coilyco-flight-deck/ward.git", branch: "main"
 
   depends_on "go" => :build
 
   def install
+    # The source is a tarball (no .git), so disable Go's VCS stamping for both the
+    # direct build and the driver's internal build. See ward#116.
+    ENV["GOFLAGS"] = "-buildvcs=false"
     # GOPROXY bypass for fresh cli-guard pseudo-versions. See docs/homebrew-build.md.
     ENV["GOPROXY"] = "direct"
     ENV["GOSUMDB"] = "off"
