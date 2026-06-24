@@ -22,6 +22,12 @@ class Ward < Formula
            "-o", bin/"ward",
            "./cmd/ward"
 
+    # Public-face shim: invoked as `warded`, ward's multicall rewrites argv to
+    # `ward drive <args>` (one binary, not a second build). The in-binary and
+    # container install paths already ship this; the host brew path needs the
+    # symlink on PATH too. See ward#277 / docs/drive.md.
+    bin.install_symlink "ward" => "warded"
+
     # ward-kdl is a no-code specverb-gen consumer: build it via the driver from
     # the committed locks (no online `lock` step) and stamp the same version as
     # ward. The driver ref tracks the Makefile so the two never drift.
@@ -37,5 +43,8 @@ class Ward < Formula
   test do
     assert_match "v#{version}", shell_output("#{bin}/ward version")
     assert_match "v#{version}", shell_output("#{bin}/ward-kdl --version")
+    # The warded multicall shim must be on PATH and point at the ward binary.
+    assert_predicate bin/"warded", :symlink?
+    assert_equal (bin/"ward").realpath, (bin/"warded").realpath
   end
 end
