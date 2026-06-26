@@ -1,8 +1,8 @@
 class Ward < Formula
   desc "A contributor-facing cli-guard consumer"
   homepage "https://forgejo.coilysiren.me/coilyco-flight-deck/ward"
-  url "https://forgejo.coilysiren.me/coilyco-flight-deck/ward/archive/v0.202.0.tar.gz"
-  sha256 "cdf5a1eb166bbbab321c2c784c074f34d402b0b7c0b2aa08a4361e639bf833fb"
+  url "https://forgejo.coilysiren.me/coilyco-flight-deck/ward/archive/v0.203.0.tar.gz"
+  sha256 "9caf0a1c7440dda1d55ddd41bc5b8f33a3883130cc4d1e13c79f069f2724695f"
   license "MIT"
   head "https://forgejo.coilysiren.me/coilyco-flight-deck/ward.git", branch: "main"
 
