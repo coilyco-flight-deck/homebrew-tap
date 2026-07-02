@@ -28,21 +28,15 @@ class Ward < Formula
     # symlink on PATH too. See ward#277 / docs/drive.md.
     bin.install_symlink "ward" => "warded"
 
-    # ward-kdl is a no-code specverb-gen consumer: build it via the driver from
-    # the committed locks (no online `lock` step) and stamp the same version as
-    # ward. The driver ref tracks the Makefile so the two never drift.
-    ref = File.read("Makefile")[/^REF\s*\?=\s*(\S+)/, 1] || "v0.26.0"
-    system "go", "run",
-           "forgejo.coilysiren.me/coilyco-flight-deck/cli-guard/cmd/specverb-gen@#{ref}",
-           "build",
-           "--guardfile", "cmd/ward-kdl/ward-kdl.forgejo.guardfile.kdl",
-           "--out", bin,
-           "--set-version", "v#{version}"
+    # The formula installs only `ward` (+ the `warded` shim). The `ward-kdl`
+    # authoring binary is deliberately NOT installed: its surfaces are already
+    # embedded in `ward`, so end users need neither it nor the tier CLIs. Spec
+    # authors build it from a ward checkout with `make build-ward-kdl` (ward#455,
+    # docs/ward-kdl-authoring.md).
   end
 
   test do
     assert_match "v#{version}", shell_output("#{bin}/ward version")
-    assert_match "v#{version}", shell_output("#{bin}/ward-kdl --version")
     # The warded multicall shim must be on PATH and point at the ward binary.
     assert_predicate bin/"warded", :symlink?
     assert_equal (bin/"ward").realpath, (bin/"warded").realpath
