@@ -1,8 +1,8 @@
 class Ward < Formula
   desc "A contributor-facing cli-guard consumer"
   homepage "https://forgejo.coilysiren.me/coilyco-flight-deck/ward"
-  url "https://forgejo.coilysiren.me/coilyco-flight-deck/ward/archive/v0.275.0.tar.gz"
-  sha256 "03a2fc49336ed20a03452d6bd4301b7fbf3bb5cc856bb30f4e746f41b0d44795"
+  url "https://forgejo.coilysiren.me/coilyco-flight-deck/ward/archive/v0.277.0.tar.gz"
+  sha256 "6f5d42345dbb22be6937dec261289fbe92929cd79f35c961c5e46af082205ed4"
   license "MIT"
   head "https://forgejo.coilysiren.me/coilyco-flight-deck/ward.git", branch: "main"
 
@@ -23,9 +23,9 @@ class Ward < Formula
            "./cmd/ward"
 
     # Public-face shim: invoked as `warded`, ward's multicall rewrites argv to
-    # `ward drive <args>` (one binary, not a second build). The in-binary and
+    # `ward agent <args>` (one binary, not a second build). The in-binary and
     # container install paths already ship this; the host brew path needs the
-    # symlink on PATH too. See ward#277 / docs/drive.md.
+    # symlink on PATH too. See ward#247, ward#282 / docs/agent.md.
     bin.install_symlink "ward" => "warded"
 
     # The formula installs only `ward` (+ the `warded` shim). The `ward-kdl`
