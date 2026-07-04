@@ -26,11 +26,11 @@ An upstream repo cuts a tag, then its release pipeline rewrites the `url "..."` 
 
 ## Commands
 
-Dev commands are declared in [`.coily/coily.yaml`](.coily/coily.yaml). Route them through coily, not bare `brew`.
+Dev commands are declared in [`.ward/ward.yaml`](.ward/ward.yaml). Route them through ward, not bare `brew`.
 
 ## See also
 
 - [AGENTS.md](AGENTS.md) - agent-facing operating rules.
 - [docs/FEATURES.md](docs/FEATURES.md) - inventory of what ships today.
 - [docs/homebrew-build.md](docs/homebrew-build.md) - build-time notes (GOPROXY bypass).
-- [.coily/coily.yaml](.coily/coily.yaml) - allowlisted commands.
+- [.ward/ward.yaml](.ward/ward.yaml) - allowlisted commands.

@@ -26,7 +26,7 @@ Editing the install/test logic of a formula (e.g. build flags, staging files) is
 
 ## Privileged ops
 
-Anything privileged routes through `coily` wrappers. Bare `brew`, `gh`, `aws`, `kubectl`, etc. are denied by the harness.
+Anything privileged routes through `ward` (contributor verbs: exec/git/pkg/audit/hook) or `ward-kdl ops` (operator surface: aws/ssm, tailscale, kubectl, forgejo). Bare `brew`, `gh`, `aws`, `kubectl`, etc. are denied by the harness.
 
 ## Git workflow
 
@@ -35,10 +35,10 @@ Anything privileged routes through `coily` wrappers. Bare `brew`, `gh`, `aws`, `
 
 ## Commands
 
-Route every dev command through coily, which reads [`.coily/coily.yaml`](.coily/coily.yaml). Add new verbs to that file before invoking them.
+Route every dev command through ward, which reads [`.ward/ward.yaml`](.ward/ward.yaml). Add new verbs to that file before invoking them.
 
 ## See also
 
 - [README.md](README.md) - human-facing intro and install steps.
 - [docs/FEATURES.md](docs/FEATURES.md) - inventory of what ships today.
-- [.coily/coily.yaml](.coily/coily.yaml) - allowlisted commands. Agents route through coily, not bare `brew`.
+- [.ward/ward.yaml](.ward/ward.yaml) - allowlisted commands. Agents route through ward, not bare `brew`.
