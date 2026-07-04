@@ -13,9 +13,9 @@ class SessionLattice < Formula
   depends_on "rust" => :build
 
   # Runtime Python resource blocks.
-  # Regenerate via `coily exec sync && coily exec brew-resources`.
+  # Regenerate via `ward exec sync && ward exec brew-resources`.
 
-  # BEGIN RESOURCES (managed by coily exec brew-resources)
+  # BEGIN RESOURCES (managed by ward exec brew-resources)
   resource "annotated-doc" do
     url "https://files.pythonhosted.org/packages/57/ba/046ceea27344560984e26a590f90bc7f4a75b06701f653222458922b558c/annotated_doc-0.0.4.tar.gz"
     sha256 "fbcda96e87e9c92ad167c2e53839e57503ecfda18804ea28102353485033faa4"

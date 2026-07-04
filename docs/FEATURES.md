@@ -29,4 +29,4 @@ This repo holds no workflows. Each upstream tool's release pipeline writes the v
 
 - [README.md](../README.md) - human-facing intro and quickstart.
 - [AGENTS.md](../AGENTS.md) - agent-facing operating rules.
-- [.coily/coily.yaml](../.coily/coily.yaml) - allowlisted commands.
+- [.ward/ward.yaml](../.ward/ward.yaml) - allowlisted commands.
