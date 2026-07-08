@@ -4,18 +4,18 @@ Orientation for fresh Claude / mobile sessions. Keep this short.
 
 ## What this repo is
 
-The centralized Homebrew tap for `coilyco-flight-deck/*` tools. Each `Formula/*.rb` points at a tag + revision on its upstream forgejo repo.
+The centralized Homebrew tap for `coilyco-flight-deck/*` tools. Most `Formula/*.rb` files point at a tag + revision on their upstream forgejo repo; `Formula/ward.rb` tracks tagged release binaries instead.
 
 Active formulae:
 
-- `Formula/ward.rb` - tracks `coilyco-flight-deck/ward` releases.
+- `Formula/ward.rb` - tracks `coilyco-flight-deck/ward` releases by downloading the tagged platform binaries and verifying them.
 - `Formula/repo-recall.rb` - tracks `coilyco-flight-deck/repo-recall` releases.
 - `Formula/session-lattice.rb` - tracks `coilyco-flight-deck/session-lattice` releases.
 - `Formula/session-lattice-puller.rb` - companion service formula; pinned in lockstep with `session-lattice.rb`.
 
 ## Release flow
 
-Upstream repos cut a tag. Their release pipeline rewrites the `url "..."` line (tag + revision) of the matching formula here via the forgejo Contents API. Once the bump lands on `main`, `brew upgrade` picks it up. This repo holds no release pipeline of its own - it is the write target for the upstream ones.
+Upstream repos cut a tag. Their release pipeline rewrites the matching formula here via the forgejo Contents API. `ward` refreshes its release-asset URLs and checksums; the other formulae still pin upstream tag + revision. Once the bump lands on `main`, `brew upgrade` picks it up. This repo holds no release pipeline of its own - it is the write target for the upstream ones.
 
 ## Forbidden ops
 

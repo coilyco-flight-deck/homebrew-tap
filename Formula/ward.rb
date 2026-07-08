@@ -1,26 +1,39 @@
 class Ward < Formula
   desc "A contributor-facing cli-guard consumer"
   homepage "https://forgejo.coilysiren.me/coilyco-flight-deck/ward"
-  url "https://forgejo.coilysiren.me/coilyco-flight-deck/ward/archive/v0.450.0.tar.gz"
-  sha256 "5c3c818cd18278343663f920c23b2a1b5a9b3fb99bb9b9cfb34cb25257a5c870"
+  version "0.450.0"
   license "MIT"
-  head "https://forgejo.coilysiren.me/coilyco-flight-deck/ward.git", branch: "main"
 
-  depends_on "go" => :build
+  on_macos do
+    if Hardware::CPU.arm?
+      url "https://forgejo.coilysiren.me/coilyco-flight-deck/ward/releases/download/v0.450.0/ward-darwin-arm64"
+      sha256 "163738d9cce52884064c8c01a582f471efb105b38a7ef2b0b03c1276e1fef8ba"
+    else
+      url "https://forgejo.coilysiren.me/coilyco-flight-deck/ward/releases/download/v0.450.0/ward-darwin-amd64"
+      sha256 "b1aa49949eb4fa0a087c6c4b43846dd2a93333fc38571fd3cef334c65b60c8d2"
+    end
+  end
+
+  on_linux do
+    if Hardware::CPU.arm?
+      url "https://forgejo.coilysiren.me/coilyco-flight-deck/ward/releases/download/v0.450.0/ward-linux-arm64"
+      sha256 "0c2da03f36ac55811689220980af233dca067757668ec4e9f774a47e4142e0e7"
+    else
+      url "https://forgejo.coilysiren.me/coilyco-flight-deck/ward/releases/download/v0.450.0/ward-linux-amd64"
+      sha256 "f53afb10e497ad72128f6a5f00f1ab967f3e6f50d63e07ea651d6a694adc7748"
+    end
+  end
 
   def install
-    # The source is a tarball (no .git), so disable Go's VCS stamping for both the
-    # direct build and the driver's internal build. See ward#116.
-    ENV["GOFLAGS"] = "-buildvcs=false"
-    # GOPROXY bypass for fresh cli-guard pseudo-versions. See docs/homebrew-build.md.
-    ENV["GOPROXY"] = "direct"
-    ENV["GOSUMDB"] = "off"
-    ENV["GOPRIVATE"] = "forgejo.coilysiren.me"
-    ldflags = "-s -w -X main.Version=v#{version}"
-    system "go", "build", "-trimpath",
-           "-ldflags", ldflags,
-           "-o", bin/"ward",
-           "./cmd/ward"
+    asset =
+      if OS.mac?
+        Hardware::CPU.arm? ? "ward-darwin-arm64" : "ward-darwin-amd64"
+      else
+        Hardware::CPU.arm? ? "ward-linux-arm64" : "ward-linux-amd64"
+      end
+
+    chmod 0555, asset
+    bin.install asset => "ward"
 
     # Public-face shim: invoked as `warded`, ward's multicall rewrites argv to
     # `ward agent <args>` (one binary, not a second build). The in-binary and
