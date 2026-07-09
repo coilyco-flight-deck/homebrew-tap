@@ -1,26 +1,26 @@
 class Ward < Formula
   desc "A contributor-facing cli-guard consumer"
   homepage "https://forgejo.coilysiren.me/coilyco-flight-deck/ward"
-  version "0.535.0"
+  version "0.536.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://forgejo.coilysiren.me/coilyco-flight-deck/ward/releases/download/v0.535.0/ward-darwin-arm64"
-      sha256 "d3f34e9093674d52fac78e9e8380cac4becaa9a01c6c778fd6d58509ca958050"
+      url "https://forgejo.coilysiren.me/coilyco-flight-deck/ward/releases/download/v0.536.0/ward-darwin-arm64"
+      sha256 "729735852f8371345024438258378e85f71c0b4177af7e50cac7eb63013d8de3"
     else
-      url "https://forgejo.coilysiren.me/coilyco-flight-deck/ward/releases/download/v0.535.0/ward-darwin-amd64"
-      sha256 "6def83df4f8938d6f781074bc63f8265c66ee2470d152ccc2a12b50cbfd95c66"
+      url "https://forgejo.coilysiren.me/coilyco-flight-deck/ward/releases/download/v0.536.0/ward-darwin-amd64"
+      sha256 "d415487820b0654981bc046b822d321b344e2c857ed4cd95e28d49d158853f62"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://forgejo.coilysiren.me/coilyco-flight-deck/ward/releases/download/v0.535.0/ward-linux-arm64"
-      sha256 "caecd47a43a701e5b177e6c9368df74a990be1f68aa5814f0083c7ec12d87dc2"
+      url "https://forgejo.coilysiren.me/coilyco-flight-deck/ward/releases/download/v0.536.0/ward-linux-arm64"
+      sha256 "19270f6a06ee2c32db4f5d355d78259827c931d3346b5a906c1a5a96a7c30db6"
     else
-      url "https://forgejo.coilysiren.me/coilyco-flight-deck/ward/releases/download/v0.535.0/ward-linux-amd64"
-      sha256 "04997a3ac5392004554e472832aa3d2849d84b62eebadf14fb8c776289a254a9"
+      url "https://forgejo.coilysiren.me/coilyco-flight-deck/ward/releases/download/v0.536.0/ward-linux-amd64"
+      sha256 "6538e6c4f6a981074cae4590e8a78bab3d2e920d273218d4ca7e57326bd61a7c"
     end
   end
 
