@@ -13,9 +13,13 @@ Tap installed via `brew tap coilyco-flight-deck/tap https://forgejo.coilysiren.m
 - **[Formula/session-lattice.rb](../Formula/session-lattice.rb)** - tracks `coilyco-flight-deck/session-lattice` tag + revision. Materialized-view service over Claude session data (embedded DuckDB). Python virtualenv formula; installs a reads `brew services` daemon.
 - **[Formula/session-lattice-puller.rb](../Formula/session-lattice-puller.rb)** - companion to session-lattice, pinned in lockstep. Ships only the puller `brew services` daemon; depends on `coilyco-flight-deck/tap/session-lattice` for the binary.
 
+## Forgejo CI
+
+- **[.forgejo/workflows/ci.yml](../.forgejo/workflows/ci.yml)** - canonical Forgejo CI for the tap audit surface. The current dev-base image does not ship Homebrew, so the job uses Ruby syntax checks across `Formula/*.rb` as the smallest useful fallback. Follow-up: move it to `ward exec audit` once the image includes brew.
+
 ## Release bump automation
 
-This repo holds no workflows. Each upstream tool's release pipeline writes the version-pin bump into the matching formula here via the forgejo Contents API:
+Each upstream tool's release pipeline writes the version-pin bump into the matching formula here via the forgejo Contents API:
 
 - **`coilyco-flight-deck/ward`** `.forgejo/workflows/release.yml` - on each release, rewrites the release-asset URL and checksum pins of [Formula/ward.rb](../Formula/ward.rb) in this repo.
 - **`coilyco-flight-deck/repo-recall`** `.forgejo/workflows/release.yml` - on each release, the `bump-tap-formula` job rewrites the `url` line of [Formula/repo-recall.rb](../Formula/repo-recall.rb) in this repo.

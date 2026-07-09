@@ -1,0 +1,40 @@
+# Forgejo-canonical CI gate for the tap audit surface.
+#
+# `ward exec audit` remains the canonical local command, but the pinned
+# agentic-os/dev-base image used by this repo does not ship Homebrew today, so
+# CI falls back to the smallest useful static guard: Ruby syntax checks for
+# every Formula file. Follow-up: swap this job back to `ward exec audit` once
+# the image grows brew.
+
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  formula-syntax:
+    runs-on: docker
+    container: forgejo.coilysiren.me/coilyco-flight-deck/agentic-os:v0.195.0
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Ruby
+        run: |
+          set -euo pipefail
+          if command -v ruby >/dev/null 2>&1; then
+            exit 0
+          fi
+          apt-get update -qq
+          apt-get install -y -qq ruby
+
+      - name: Syntax-check Formula files
+        run: |
+          set -euo pipefail
+          for formula in Formula/*.rb; do
+            ruby -c "$formula"
+          done
