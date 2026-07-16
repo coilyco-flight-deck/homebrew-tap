@@ -1,26 +1,30 @@
 class Ward < Formula
   desc "A contributor-facing cli-guard consumer"
   homepage "https://forgejo.coilysiren.me/coilyco-flight-deck/ward"
-  version "0.768.0"
+  version "0.775.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://forgejo.coilysiren.me/coilyco-flight-deck/ward/releases/download/v0.768.0/ward-darwin-arm64"
-      sha256 "3f0054bffc129117676ceeb67527b595dc445070f3dc0c871838dc5b912216c8"
+      url "https://forgejo.coilysiren.me/coilyco-flight-deck/ward/releases/download/v0.775.0-tmp/ward-darwin-arm64",
+          headers: ["Accept: application/octet-stream"]
+      sha256 "f37c8335ec60838b591b588854f799b645879b3e8c1164d81bbb79d6262d0480"
     else
-      url "https://forgejo.coilysiren.me/coilyco-flight-deck/ward/releases/download/v0.768.0/ward-darwin-amd64"
-      sha256 "779069afd568ab4e4e826a34dc6b6cb5a53362c2f010b188631cfa43761fb773"
+      url "https://forgejo.coilysiren.me/coilyco-flight-deck/ward/releases/download/v0.775.0-tmp/ward-darwin-amd64",
+          headers: ["Accept: application/octet-stream"]
+      sha256 "658b6d08afed5fe3d5147aa97f51692175edaafb0875480d9b986f6a9dbc9cc1"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://forgejo.coilysiren.me/coilyco-flight-deck/ward/releases/download/v0.768.0/ward-linux-arm64"
-      sha256 "129d3edfbda1292d698d1650ad31a3378219423e7d47585f975bc3b1c8fceaac"
+      url "https://forgejo.coilysiren.me/coilyco-flight-deck/ward/releases/download/v0.775.0-tmp/ward-linux-arm64",
+          headers: ["Accept: application/octet-stream"]
+      sha256 "ec8c889e9f6e5887bea5b7acb77fd6a0e78edc68fd7b974390e01a2fdd0ad065"
     else
-      url "https://forgejo.coilysiren.me/coilyco-flight-deck/ward/releases/download/v0.768.0/ward-linux-amd64"
-      sha256 "314d168d9a35c047e163603de036f97220748d516ca75aeed97644bd6262bfa5"
+      url "https://forgejo.coilysiren.me/coilyco-flight-deck/ward/releases/download/v0.775.0-tmp/ward-linux-amd64",
+          headers: ["Accept: application/octet-stream"]
+      sha256 "d89b2bbb9506aa1a317b9efdd9845c02616b82c7d49bf0c885758acb2d03ab7c"
     end
   end
 
