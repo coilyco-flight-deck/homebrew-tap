@@ -1,40 +1,40 @@
 class Ward < Formula
   desc "A contributor-facing cli-guard consumer"
   homepage "https://forgejo.coilysiren.me/coilyco-flight-deck/ward"
-  version "0.781.0"
+  version "0.782.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://forgejo.coilysiren.me/coilyco-flight-deck/ward/releases/download/v0.781.0/ward-darwin-arm64",
+      url "https://forgejo.coilysiren.me/coilyco-flight-deck/ward/releases/download/v0.782.0/ward-darwin-arm64",
           headers: ["Accept: application/octet-stream"]
-      sha256 "94921932b6f6313e689b274575db1282f39e9407ce4d080ccf452c41500d6fd7"
+      sha256 "1efc76fd0dc36e2f82f305daa2499a55bdb6bf0b1f28f1cf19af0a015f106965"
       resource "ward-linux" do
-        url "https://forgejo.coilysiren.me/coilyco-flight-deck/ward/releases/download/v0.781.0/ward-linux-arm64",
+        url "https://forgejo.coilysiren.me/coilyco-flight-deck/ward/releases/download/v0.782.0/ward-linux-arm64",
             headers: ["Accept: application/octet-stream"]
-        sha256 "7b2c17e90e550efb58411135c144efade2ee69fc1b9d706400199a751b0a4651"
+        sha256 "813d9dd9d0e69c31671c3b31a4ca64042e3deb2798928e2775d57d7def7f7fd8"
       end
     else
-      url "https://forgejo.coilysiren.me/coilyco-flight-deck/ward/releases/download/v0.781.0/ward-darwin-amd64",
+      url "https://forgejo.coilysiren.me/coilyco-flight-deck/ward/releases/download/v0.782.0/ward-darwin-amd64",
           headers: ["Accept: application/octet-stream"]
-      sha256 "e719fc23d2c79aa70dbf9c0c676b0c8f8e4121fab063eaaf59b2dbd3cc3de768"
+      sha256 "84aca30b3e1809ca843e1c2ce7c0f29cc96a0cbf0a9d59cbdd1ade479598344d"
       resource "ward-linux" do
-        url "https://forgejo.coilysiren.me/coilyco-flight-deck/ward/releases/download/v0.781.0/ward-linux-amd64",
+        url "https://forgejo.coilysiren.me/coilyco-flight-deck/ward/releases/download/v0.782.0/ward-linux-amd64",
             headers: ["Accept: application/octet-stream"]
-        sha256 "f1707e0041f2caceefb6c5eb54d61426ce9c5df12e8f35ecbc21348acc1551ec"
+        sha256 "9d9bb9fb93ef24880ddbc993dd7a3973736c74c6a3582a3b7eb7e022a4fd8d81"
       end
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://forgejo.coilysiren.me/coilyco-flight-deck/ward/releases/download/v0.781.0/ward-linux-arm64",
+      url "https://forgejo.coilysiren.me/coilyco-flight-deck/ward/releases/download/v0.782.0/ward-linux-arm64",
           headers: ["Accept: application/octet-stream"]
-      sha256 "7b2c17e90e550efb58411135c144efade2ee69fc1b9d706400199a751b0a4651"
+      sha256 "813d9dd9d0e69c31671c3b31a4ca64042e3deb2798928e2775d57d7def7f7fd8"
     else
-      url "https://forgejo.coilysiren.me/coilyco-flight-deck/ward/releases/download/v0.781.0/ward-linux-amd64",
+      url "https://forgejo.coilysiren.me/coilyco-flight-deck/ward/releases/download/v0.782.0/ward-linux-amd64",
           headers: ["Accept: application/octet-stream"]
-      sha256 "f1707e0041f2caceefb6c5eb54d61426ce9c5df12e8f35ecbc21348acc1551ec"
+      sha256 "9d9bb9fb93ef24880ddbc993dd7a3973736c74c6a3582a3b7eb7e022a4fd8d81"
     end
   end
 
