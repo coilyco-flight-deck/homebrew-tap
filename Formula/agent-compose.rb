@@ -1,23 +1,23 @@
 class AgentCompose < Formula
   desc "Context substrate for AOS, Ward, and native agent harnesses"
   homepage "https://forgejo.coilysiren.me/coilyco-flight-deck/agent-compose"
-  version "0.6.0"
+  version "0.7.0"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://forgejo.coilysiren.me/coilyco-flight-deck/agent-compose/releases/download/v0.6.0/agent-compose-darwin-arm64"
-      sha256 "794e61b4501ae1825c303d69880446e2e1034babb8e545c7299b560afa97822c"
+      url "https://forgejo.coilysiren.me/coilyco-flight-deck/agent-compose/releases/download/v0.7.0/agent-compose-darwin-arm64"
+      sha256 "dace774756cd45ec6bacd7363476a388bd8914c7ad6a72e163a9970a46de9be1"
     end
   end
   on_linux do
     on_intel do
-      url "https://forgejo.coilysiren.me/coilyco-flight-deck/agent-compose/releases/download/v0.6.0/agent-compose-linux-amd64"
-      sha256 "bd9cccd1afacd28e13c28867351600455ab5339c36dda97a5f6a3e4a1ebe5f8e"
+      url "https://forgejo.coilysiren.me/coilyco-flight-deck/agent-compose/releases/download/v0.7.0/agent-compose-linux-amd64"
+      sha256 "6fcf657f0c6fb85488d10d2e58435c0e583f3be293ddf1006cca1b46ae490e4c"
     end
     on_arm do
-      url "https://forgejo.coilysiren.me/coilyco-flight-deck/agent-compose/releases/download/v0.6.0/agent-compose-linux-arm64"
-      sha256 "ad4716387734fc2a56b59c21f686191d0e4d403c0b0d4d15892bc835ba3e0ad1"
+      url "https://forgejo.coilysiren.me/coilyco-flight-deck/agent-compose/releases/download/v0.7.0/agent-compose-linux-arm64"
+      sha256 "5ab49249350ade2bb46cb6c0b0aea03e8c288f3f77aa7e7b08be995b5cec08c0"
     end
   end
 
