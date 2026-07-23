@@ -1,28 +1,29 @@
 class AgentCompose < Formula
   desc "Kai's personality engine for agent context"
   homepage "https://forgejo.coilysiren.me/coilyco-flight-deck/agent-compose"
-  version "0.4.0"
+  version "0.4.1"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://forgejo.coilysiren.me/coilyco-flight-deck/agent-compose/releases/download/v0.4.0/agent-compose-darwin-arm64"
-      sha256 "d478b3d2bc88b3297a1b8282456e549485f2eae7e7478bb60bbe80dbc3ded104"
+      url "https://forgejo.coilysiren.me/coilyco-flight-deck/agent-compose/releases/download/v0.4.1/agent-compose-darwin-arm64"
+      sha256 "c35c453ba6c5051b4f917bce296297b77b141f2390cf3d8933509d8ac08ee2f4"
     end
   end
   on_linux do
     on_intel do
-      url "https://forgejo.coilysiren.me/coilyco-flight-deck/agent-compose/releases/download/v0.4.0/agent-compose-linux-amd64"
-      sha256 "443ddbfa3a57d15c74f88e8493e1fbbd80d6f5bbd55890e29451d1219a35faaf"
+      url "https://forgejo.coilysiren.me/coilyco-flight-deck/agent-compose/releases/download/v0.4.1/agent-compose-linux-amd64"
+      sha256 "78bcda7c814186b808a688671eff9bea45fae4ba040dfdb6deeea9d3914bbe45"
     end
     on_arm do
-      url "https://forgejo.coilysiren.me/coilyco-flight-deck/agent-compose/releases/download/v0.4.0/agent-compose-linux-arm64"
-      sha256 "ab80f9690c53dd5214a5ab9cbfcb7f159ed878917dd77eb0a44afe648d93e897"
+      url "https://forgejo.coilysiren.me/coilyco-flight-deck/agent-compose/releases/download/v0.4.1/agent-compose-linux-arm64"
+      sha256 "0d210895c03c05704b1bc27d7cf148f783967830809d5bd12988f885ddb45590"
     end
   end
 
   def install
     bin.install Dir["agent-compose-*"].first => "agent-compose"
+    bin.install_symlink "agent-compose" => "acompose"
   end
 
   test do
