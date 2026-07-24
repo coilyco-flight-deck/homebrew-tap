@@ -1,23 +1,23 @@
 class Aos < Formula
   desc "Standalone composed-agent container launcher for Agentic OS"
   homepage "https://forgejo.coilysiren.me/coilyco-flight-deck/agentic-os"
-  version "0.31.0"
+  version "0.32.0"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://forgejo.coilysiren.me/coilyco-flight-deck/agentic-os/releases/download/aos-v0.31.0/aos-darwin-arm64"
-      sha256 "d02c1f5cdad5e073227925bb05d536ce77b9c5ac8f169db5f1a36a99adb1b0f2"
+      url "https://forgejo.coilysiren.me/coilyco-flight-deck/agentic-os/releases/download/aos-v0.32.0/aos-darwin-arm64"
+      sha256 "9b10e59d935de8607365fb5685a969c1872d81995a6abce3e5aa59faec4110c5"
     end
   end
   on_linux do
     on_intel do
-      url "https://forgejo.coilysiren.me/coilyco-flight-deck/agentic-os/releases/download/aos-v0.31.0/aos-linux-amd64"
-      sha256 "124ef62679f6d5b71255a6c107870b3ed059a00ffcaa3b1c0e09951747f5e349"
+      url "https://forgejo.coilysiren.me/coilyco-flight-deck/agentic-os/releases/download/aos-v0.32.0/aos-linux-amd64"
+      sha256 "024932effaedae1aa8fe75f5b097ae940fd8a5c1ea7081a82e34cd77a7d8efe9"
     end
     on_arm do
-      url "https://forgejo.coilysiren.me/coilyco-flight-deck/agentic-os/releases/download/aos-v0.31.0/aos-linux-arm64"
-      sha256 "c5724472ce714b8af170502a8acd0e3db96a3c9f951f2867c32241d1d3f5196c"
+      url "https://forgejo.coilysiren.me/coilyco-flight-deck/agentic-os/releases/download/aos-v0.32.0/aos-linux-arm64"
+      sha256 "d0ab82b5e5d4095f8370cb017d780d3c092cacb3bdd394f73e50139a7407469b"
     end
   end
 
