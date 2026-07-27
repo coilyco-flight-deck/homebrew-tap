@@ -7,17 +7,17 @@ class AgentCompose < Formula
   on_macos do
     on_arm do
       url "https://forgejo.coilysiren.me/coilyco-flight-deck/agent-compose/releases/download/v0.70.0/agent-compose-darwin-arm64"
-      sha256 "22a55d08dfccb7278d0cff5b8312a2cf61bfb5587febd7ae1b99aecdb2b1c167"
+      sha256 "88262bbaa8ff79afe092dcd421fa4c5ceb065b4fa3a34a74d3f6dc01b150ad9c"
     end
   end
   on_linux do
     on_intel do
       url "https://forgejo.coilysiren.me/coilyco-flight-deck/agent-compose/releases/download/v0.70.0/agent-compose-linux-amd64"
-      sha256 "b2b0809e5c44cbd8383d20691608bd05c0d92c64ac56a32dd29479557f03a094"
+      sha256 "165de4955e84c9b42d2177c61b8f5843871038385694eb10a511d5ceecdbfcbd"
     end
     on_arm do
       url "https://forgejo.coilysiren.me/coilyco-flight-deck/agent-compose/releases/download/v0.70.0/agent-compose-linux-arm64"
-      sha256 "6b4409b6ff32ed259e975612a946432a9346e028efe2b754ff821720daa61802"
+      sha256 "ca83ee04e5e6b91cb03db124c4486aa167fb4b52e32c2e2cfc729294089e5bc0"
     end
   end
 
