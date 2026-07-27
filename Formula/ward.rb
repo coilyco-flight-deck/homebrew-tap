@@ -1,34 +1,34 @@
 class Ward < Formula
   desc "A contributor-facing cli-guard consumer"
   homepage "https://forgejo.coilysiren.me/coilyco-flight-deck/ward"
-  version "0.821.0"
+  version "0.822.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://forgejo.coilysiren.me/attachments/ef9ff8aa-eae9-4720-b0e2-b27c9f4860e8"
-      sha256 "567a3e478e7251efb0cf7923fe7dd4da3986051d674e4f4adae60dde2b4fb226"
+      url "https://forgejo.coilysiren.me/attachments/8a708502-6d2c-4a51-95fd-78e5e1a0a5e8"
+      sha256 "02b6685dc89d813c153de32f115397cd93a5c4e8b2b4fe929e8a0a9d51d49574"
       resource "ward-linux" do
-        url "https://forgejo.coilysiren.me/attachments/ea79b536-6e3b-428a-8003-db77a1d66363"
-        sha256 "b8b334d8ad293ed193a92bdf03efd31cab6a4c75097f90d93d430ab92c9c6348"
+        url "https://forgejo.coilysiren.me/attachments/1b51f932-8a75-49a8-8cf5-66dd7d86a17d"
+        sha256 "94995e58504d9d8e6b878a702da774a82b2e9005e2149457b1c393ba13252ecd"
       end
     else
-      url "https://forgejo.coilysiren.me/attachments/c2ae717d-1152-43a0-b822-3e185e469889"
-      sha256 "b41ed458d7ed81397e79bc8cfa1897117795e8d0eb492c03a7cebadc3d1ea4a3"
+      url "https://forgejo.coilysiren.me/attachments/c74cfa24-7531-4dc4-8fd7-45ebc94ceae8"
+      sha256 "3a057574e31de471bc841b1d8797466a4b8843b362551131b51e98785f6a7b60"
       resource "ward-linux" do
-        url "https://forgejo.coilysiren.me/attachments/38db0430-4a9c-4a8e-a618-5665f440832e"
-        sha256 "93b94f34712641d50639cb81e75698847324bfa4738d12899657ca67ed9d92ae"
+        url "https://forgejo.coilysiren.me/attachments/95fe0249-56bc-4543-8ea7-c0f5a428a106"
+        sha256 "1f1f8981cbe47cfc8f911e8e2a3937157d71075ca68ab6ac7e4aa8aa236741a5"
       end
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://forgejo.coilysiren.me/attachments/ea79b536-6e3b-428a-8003-db77a1d66363"
-      sha256 "b8b334d8ad293ed193a92bdf03efd31cab6a4c75097f90d93d430ab92c9c6348"
+      url "https://forgejo.coilysiren.me/attachments/1b51f932-8a75-49a8-8cf5-66dd7d86a17d"
+      sha256 "94995e58504d9d8e6b878a702da774a82b2e9005e2149457b1c393ba13252ecd"
     else
-      url "https://forgejo.coilysiren.me/attachments/38db0430-4a9c-4a8e-a618-5665f440832e"
-      sha256 "93b94f34712641d50639cb81e75698847324bfa4738d12899657ca67ed9d92ae"
+      url "https://forgejo.coilysiren.me/attachments/95fe0249-56bc-4543-8ea7-c0f5a428a106"
+      sha256 "1f1f8981cbe47cfc8f911e8e2a3937157d71075ca68ab6ac7e4aa8aa236741a5"
     end
   end
 
