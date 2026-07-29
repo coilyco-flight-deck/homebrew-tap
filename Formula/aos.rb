@@ -1,34 +1,46 @@
 class Aos < Formula
   desc "Agent runtime composition root for Agentic OS"
   homepage "https://forgejo.coilysiren.me/coilyco-flight-deck/agentic-os"
-  version "0.131.0"
+  version "0.132.0"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://forgejo.coilysiren.me/coilyco-flight-deck/agentic-os/releases/download/aos-v0.131.0/aos-darwin-arm64"
-      sha256 "6c1f96d0b42acb992022576a8c0e1cb177171e8f092b330ffb9eeb79237322f2"
+      url "https://forgejo.coilysiren.me/coilyco-flight-deck/agentic-os/releases/download/aos-v0.132.0/aos-darwin-arm64"
+      sha256 "53db1c6770e06c217f1816b1a03636a5c77b50baaf80f1f252f845faf8f9f8e5"
       resource "aosguard" do
-        url "https://forgejo.coilysiren.me/coilyco-flight-deck/agentic-os/releases/download/aos-v0.131.0/aosguard-darwin-arm64"
-        sha256 "71f7a81c6c110fd42ce611952d28bae55c2cdd9da67c8cfa991e93d68ad6eafe"
+        url "https://forgejo.coilysiren.me/coilyco-flight-deck/agentic-os/releases/download/aos-v0.132.0/aosguard-darwin-arm64"
+        sha256 "37e28c59433478ee8222efb09e57db17f96e5e9501e0323b6e542e411687d3ae"
+      end
+      resource "agent-terminal" do
+        url "https://forgejo.coilysiren.me/coilyco-flight-deck/agentic-os/releases/download/aos-v0.132.0/agent-terminal-darwin-arm64"
+        sha256 "789ae993a5cc5e35a0ad98186b3f12cb7cdf0f07eb46b57bd4814b30f5fd2caa"
       end
     end
   end
   on_linux do
     on_intel do
-      url "https://forgejo.coilysiren.me/coilyco-flight-deck/agentic-os/releases/download/aos-v0.131.0/aos-linux-amd64"
-      sha256 "a12269cc6ce5e636c487c9a5153842b764e327e7e6aa84df96e5e553a3d8a9b2"
+      url "https://forgejo.coilysiren.me/coilyco-flight-deck/agentic-os/releases/download/aos-v0.132.0/aos-linux-amd64"
+      sha256 "0749c0dd607dcfda904347b833b732ebf2d4b35f2b9169fbe687c2be9fec7c54"
       resource "aosguard" do
-        url "https://forgejo.coilysiren.me/coilyco-flight-deck/agentic-os/releases/download/aos-v0.131.0/aosguard-linux-amd64"
-        sha256 "afe4a5a2c5c304fd0fdcf06e48a189d674b80c9c1eee11a1cc78d00d579c086f"
+        url "https://forgejo.coilysiren.me/coilyco-flight-deck/agentic-os/releases/download/aos-v0.132.0/aosguard-linux-amd64"
+        sha256 "0402e20f23de95408a2b4316866a0390c49cc503230aa0593de6f9ce0c0f0acb"
+      end
+      resource "agent-terminal" do
+        url "https://forgejo.coilysiren.me/coilyco-flight-deck/agentic-os/releases/download/aos-v0.132.0/agent-terminal-linux-amd64"
+        sha256 "51c4e7a6bb20fb875646477734471fae3bd8599040102be75b43e9ee2ede2daa"
       end
     end
     on_arm do
-      url "https://forgejo.coilysiren.me/coilyco-flight-deck/agentic-os/releases/download/aos-v0.131.0/aos-linux-arm64"
-      sha256 "f7148715afe0aedc2e3ce04409f63270d687143dac1dbf91e4d296cc826fd292"
+      url "https://forgejo.coilysiren.me/coilyco-flight-deck/agentic-os/releases/download/aos-v0.132.0/aos-linux-arm64"
+      sha256 "996c4f268264b68a5d12c6f4908255faa4ba48148df48446af058e2c9bed8662"
       resource "aosguard" do
-        url "https://forgejo.coilysiren.me/coilyco-flight-deck/agentic-os/releases/download/aos-v0.131.0/aosguard-linux-arm64"
-        sha256 "7c357bbca8c4b1582cf75d2d88b8fa7cb4f7f7a171b7040b80df973be1688b3a"
+        url "https://forgejo.coilysiren.me/coilyco-flight-deck/agentic-os/releases/download/aos-v0.132.0/aosguard-linux-arm64"
+        sha256 "3b7189a90c19f3ead22aa6ed65cbe28616a07f8dd19153994a391d55d5aa1b84"
+      end
+      resource "agent-terminal" do
+        url "https://forgejo.coilysiren.me/coilyco-flight-deck/agentic-os/releases/download/aos-v0.132.0/agent-terminal-linux-arm64"
+        sha256 "4a4fb5794f02a94bc7183c7e826a362fc69066b2c84ebdffff86de785c57e763"
       end
     end
   end
@@ -36,10 +48,12 @@ class Aos < Formula
   def install
     bin.install Dir["aos-*"].first => "aos"
     resource("aosguard").stage { bin.install Dir["aosguard-*"].first => "aosguard" }
+    resource("agent-terminal").stage { bin.install Dir["agent-terminal-*"].first => "agent-terminal" }
   end
 
   test do
     assert_match version.to_s, shell_output("#{bin}/aos version")
     assert_match version.to_s, shell_output("#{bin}/aosguard --version")
+    assert_match version.to_s, shell_output("#{bin}/agent-terminal --version")
   end
 end
